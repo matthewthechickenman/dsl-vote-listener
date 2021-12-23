@@ -17,5 +17,9 @@ process.info = {
 }
 
 setTimeout(() => {
+    // Tasks that run every hour
+}, 3600000);
 
-}, 300000);
+setTimeout(() => {
+    // Tasks that run every 30 minutes
+}, 1800000);
