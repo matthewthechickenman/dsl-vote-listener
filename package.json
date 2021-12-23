@@ -1,0 +1,12 @@
+{
+    "name": "dslvotelistener",
+    "version": "1.0.0-rewritten",
+    "description": "DSL Vote Listener rewritten",
+    "main": "index.js",
+    "dependencies": {
+        "express": "^4.17.2",
+        "discord.js-light": "^4.3.1",
+        "ejs": "^3.1.6",
+        "mongodb": "^4.2.2"
+    }
+}
