@@ -1,4 +1,5 @@
 # DSL Vote Listener bot documentation
+[Invite]()
 
 ## Index
 - [Commands](#commands)
@@ -11,7 +12,22 @@
 ## Commands
 
 ### change
-This command allows you to change aspects about the bot, such as the reward role, the leaderboard channel, or regenerate the authentication token.
+This command allows you to change aspects about the bot, such as the reward role, the vote channel, regenerate the authentication token, or change your leaderboard consent status.
+
+See more details on leaderboard [here](#leaderboard).
+
+#### Options
+##### action=regenerate_auth
+This will regenerate your authentication token.
+
+##### action=vote_channel
+This will change the channel that the bot sends messages too
+
+##### action=reward_role
+This will change the role that the bot will give to users who vote.
+
+##### action=leaderboard_consent
+This will toggle your consent status for the leaderboard.
 
 ### info
 This command allows you to view information that is stored about your server. This includes the current vote count, the current reward role, the current authentication, guild ID, profile picture and other information such as this.
@@ -22,11 +38,6 @@ This sends all of the information we have, including the authentication token, t
 
 ##### private=false
 This sends very basic, and non-sensitive, information to the user. This includes the current vote count, the current reward role, and how many times the user has voted.
-
-### leaderboard
-This command allows you to toggle your consent to the leaderboard.
-
-The leaderboard is a (PUBLIC) list of servers who have the most votes. The leaderboard is fetched from database every hour.
 
 ### setup
 This command allows you to set up the bot.
