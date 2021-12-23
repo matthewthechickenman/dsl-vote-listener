@@ -17,11 +17,10 @@ This command allows you to change aspects about the bot, such as the reward role
 This command allows you to view information that is stored about your server. This includes the current vote count, the current reward role, the current authentication, guild ID, profile picture and other information such as this.
 
 #### Options
-##### private
-###### true
+##### private=true
 This sends all of the information we have, including the authentication token, to the user in an ephemeral reply.
 
-###### false
+##### private=false
 This sends very basic, and non-sensitive, information to the user. This includes the current vote count, the current reward role, and how many times the user has voted.
 
 ### leaderboard
