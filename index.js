@@ -16,10 +16,10 @@ process.info = {
     leaderboard: []
 }
 
-setTimeout(() => {
+setInterval(() => {
     // Tasks that run every hour
 }, 3600000);
 
-setTimeout(() => {
+setInterval(() => {
     // Tasks that run every 30 minutes
 }, 1800000);
