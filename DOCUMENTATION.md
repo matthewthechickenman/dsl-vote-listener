@@ -11,7 +11,7 @@
 
 ## Commands
 
-### change
+### config
 This command allows you to change aspects about the bot, such as the reward role, the vote channel, regenerate the authentication token, or change your leaderboard consent status.
 
 See more details on leaderboard [here](#leaderboard).
@@ -28,6 +28,9 @@ This will change the role that the bot will give to users who vote.
 
 ##### action=leaderboard_consent
 This will toggle your consent status for the leaderboard.
+
+### data
+Retrieve all of your data from the DB and send it to you via an ephemeral message.
 
 ### info
 This command allows you to view information that is stored about your server. This includes the current vote count, the current reward role, the current authentication, guild ID, profile picture and other information such as this.

@@ -5,7 +5,8 @@
     },
     "discord": {
         "token": "bot token",
-        "reporting_webhook": "webhook for reporting errors"
+        "reporting_webhook": "webhook for reporting errors",
+        "support": "a link to your support server"
     },
     "web": {
         "port": 13509,

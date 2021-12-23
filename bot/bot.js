@@ -28,11 +28,17 @@ client.on('ready', () => {
         if (!file.endsWith(".js")) return;
         const command = require(`./commands/${file}`);
         client.commands[command.name] = command.run;
-        sendToDiscord.push(command.meta)
+        sendToDiscord.push(command.meta);
     });
+    client.application.commands.set(sendToDiscord);
 });
 
 client.on('interactionCreate', (interaction) => {
     if (!interaction.isApplicationCommand()) return;
-    
+    const command = client.commands[interaction.commandName];
+    if (!command) {
+        return interaction.reply({ephemeral: true, content: `Command \`${interaction.commandName}\` not found! This may be a bug. Please report it to the developer at ${process.conf.discord.support}`});
+    } else {
+        command(client, interaction);
+    }
 })
