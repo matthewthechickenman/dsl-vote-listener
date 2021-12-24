@@ -11,31 +11,13 @@ The bot uses slash commands and can handle many server's webhooks.
 - Voting roles (coming soon)
 - Counting votes per user (resets will be possible).
 
-## Installation
-- Clone the repository
-- Install the dependencies using NPM
-- Fill in your config file, see provided example
-- Run index.js
-
-## Usage
+## Documentation
 This bot is slightly overkill for one server.
 
-## Recommended
-If you're going to be hosting a public instance of this bot, it is highly recommended that you write a privacy policy.
+Bot documentation can be found [here](DOCUMENTATION.md)
+Dev documentation can be found [here](DEV_DOCUMENTATION.md)
 
-Place your privacy policy in the web/public/privacy.txt folder. (You can also modify the existing route in the web server to serve this file, example code below)
+## Notes
+Thanks for using DSL Vote Listener ❤️
 
-```js
-// File: web/routes/privacy.js
-// Change to:
-module.exports = {
-    route: "/privacy",
-    method: "GET",
-    run: (req, res) => {
-        res.render("privacy"); // This will render privacy.ejs.
-    }
-}
-```
-
-## Contributing
-This project is open source, and you can contribute to it by making a pull request.
+\- Matthew
