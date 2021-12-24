@@ -12,7 +12,7 @@ The bot uses slash commands and can handle many server's webhooks.
 - Counting votes per user (resets will be possible).
 
 ## Documentation
-This bot is slightly overkill for one server.
+This bot is slightly overkill for one server as it is designed to handle many.
 
 Bot documentation can be found [here](DOCUMENTATION.md)
 
