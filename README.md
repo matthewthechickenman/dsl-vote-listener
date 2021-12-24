@@ -15,6 +15,7 @@ The bot uses slash commands and can handle many server's webhooks.
 This bot is slightly overkill for one server.
 
 Bot documentation can be found [here](DOCUMENTATION.md)
+
 Dev documentation can be found [here](DEV_DOCUMENTATION.md)
 
 ## Notes
