@@ -1,14 +1,18 @@
 # DSL Vote Listener bot public API documentation
+## Versions
+- [v1](#v1)
+
+## v1
 ## Routes
 | Method | Path | Description | Authentication |
 |--------|-------|--------------|--------------|
-| GET    | [/api/v1/:guild_id/vote_count](#get-api-v1-:guild_id-vote_count) | Get the current vote count | No |
-| GET    | [/api/v1/stats](#get-api-v1-stats) | Get the bot's stats | No |
-| GET    | [/api/v1/:guild_id/config](#get-api-v1-:guild_id/config) | Get the config | Yes |
-| POST   | [/api/v1/:guild_id/config](#post-api-v1-:guild_id/config) | Set the config | Yes |
-| GET    | [/api/v1/:guild_id/leaderboard](#get-api-v1-:guild_id-leaderboard) | Get the leaderboard for the guild | Yes |
-| POST   | [/api/v1/roles/:guild_id/:user_id/toggle_vote_role](#post-api-v1-:guild_id-:user_id/toggle_vote_role) | Toggle the vote role | Yes |
-| GET    | [/api/v1/:guild_id/:user_id/vote_object](#get-api-v1-:guild_id-:user_id-vote_object) | Get the user's vote count | Yes |
+| GET    | [/api/v1/:guild_id/vote_count](#get-apiv1guild_idvote_count) | Get the current vote count | No |
+| GET    | [/api/v1/stats](#get-apiv1stats) | Get the bot's stats | No |
+| GET    | [/api/v1/:guild_id/config](#get-apiv1guild_idconfig) | Get the config | Yes |
+| POST   | [/api/v1/:guild_id/config](#post-apiv1guild_idconfig) | Set the config | Yes |
+| GET    | [/api/v1/:guild_id/leaderboard](#get-apiv1guild_id-leaderboard) | Get the leaderboard for the guild | Yes |
+| POST   | [/api/v1/roles/:guild_id/:user_id/toggle_vote_role](#post-apiv1guild_iduser_idtoggle_vote_role) | Toggle the vote role | Yes |
+| GET    | [/api/v1/:guild_id/:user_id/vote_object](#get-apiv1guild_iduser_idvote_object) | Get the user's vote count | Yes |
 
 
 ## Authentication
