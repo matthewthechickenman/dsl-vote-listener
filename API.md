@@ -1,6 +1,9 @@
 # DSL Vote Listener bot public API documentation
 ## Versions
-- [v1](#v1)
+| Version | Date |   Status   | Description |
+|---------|------|------------|-------------|
+| [v1](#v1) | 14/1/2021 | Current  | Initial release |
+
 
 ## v1
 ## Routes
