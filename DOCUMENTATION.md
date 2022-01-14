@@ -58,7 +58,7 @@ This includes data such as server count, shard count, uptime, and the current ve
 
 ## Config
 
-There are a few options that you can change about the bot.
+There are a few options that you can change about the bot's behaviour.
 
 ### Vote channel
 This is the channel where the bot will post the vote messages.

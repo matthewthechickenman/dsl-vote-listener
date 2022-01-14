@@ -1,0 +1,6 @@
+config.ex.json
+docs/
+*.md
+.gitignore
+.vscode
+.git

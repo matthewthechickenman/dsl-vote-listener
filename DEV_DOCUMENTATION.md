@@ -37,13 +37,15 @@ This can be a relative link, or a full URL. The default /privacy handler located
 This allows the discord bot to send users to the correct pages.
 #### bot_name
 This is the name of your bot. This is used in the web server's title and other places.
-### Run index.js
+### Run index.js (at the repo root)
 ```bash
 node index.js
 ```
 
 ## Recommended
 If you're going to be hosting a public instance of this bot, it is highly recommended that you write a privacy policy.
+
+You can see what data the bot stores, and why it stores it [here](#data-storage). You can use this to help write a privacy policy.
 
 Place your privacy policy in the web/public/privacy.txt folder. (You can also modify the existing route in the web server to serve this file, example code below)
 
@@ -65,12 +67,14 @@ This is the server schema which is stored in the database. There are comments in
 ```js
 // Server structure
 {
-    id: String,
-    vote_count: Number,
-    reward_role: String,
-    vote_channel: String,
-    lb_consent: Boolean,
-    auth: String
+    id: String, // Identifier for the server.
+    vote_count: Number, // Number of votes cast towards the server.
+    reward_role: String, // The role that is given to the user who voted.
+    vote_channel: String, // The channel that the vote notifications are sent to
+    lb_consent: Boolean, // Whether or not the user has consented to the leaderboard.
+    auth: String, // The auth token for the server.
+    name: String, // The name of the server.
+    picture: String, // The URL of the server's avatar thingy.
 }
 ```
 
@@ -90,6 +94,7 @@ This is the user schema which is stored in the database. There are comments in t
             "guild2": {...},
             "guild3": {...}
           }
+          VoteStats are removed when the user leaves the server OR doesn't vote for 6 months.
     */
 }
 ```
