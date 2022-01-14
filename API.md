@@ -16,7 +16,7 @@
 
 
 ## Authentication
-Authentication is required for many routes. You can find the authentication token in the [config](/DOCUMENTATION.md#config) command.
+Authentication is required for many routes. You can find the authentication token in the [data](/DOCUMENTATION.md#data) command.
 
 ## Route descriptions
 ### GET /api/v1/:guild_id/vote_count
