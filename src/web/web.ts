@@ -4,6 +4,7 @@ import Limiters from './utils/Limiters';
 module.exports = function start_web() {
     const app = express();
     app.use(express.json());
+    app.set('trust proxy', 1)
     Limiters.forEach(limiter => {
         app.use(limiter.path, limiter.middleware);
     });

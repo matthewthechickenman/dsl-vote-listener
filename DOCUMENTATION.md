@@ -11,6 +11,9 @@
 
 ## Commands
 
+### server_leaderboard
+This command will return the server's leaderboard, allowing you to check who has the most votes in the server. Only users who both vote for the server, and are in the server, will be included in the leaderboard.
+
 ### config
 This command allows you to change aspects about the bot, such as the reward role, the vote channel, regenerate the authentication token, or change your leaderboard consent status.
 

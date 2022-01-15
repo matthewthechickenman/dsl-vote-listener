@@ -12,8 +12,8 @@ const meta = {
  */
  const run = async (client, interaction) => {
     await interaction.deferReply();
-    let serverData = await process.db.collection("data").findOne({id: interaction.guild.id, type: "server"});
-    let userData = await process.db.collection("data").findOne({id: interaction.member.id, type: "user"});
+    let serverData = await global.db.collection("data").findOne({id: interaction.guild.id, type: "server"});
+    let userData = await global.db.collection("data").findOne({id: interaction.member.id, type: "user"});
 
     /**
      * @type {import("discord.js-light").MessageEmbed}

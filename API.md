@@ -1,14 +1,15 @@
 # DSL Vote Listener bot public API documentation
-## Versions
-| Version | Date |   Status   | Description |
-|---------|------|------------|-------------|
-| [v1](#v1) | 14/1/2021 | Current  | Initial release |
+# Versions
+| Version | Date |   Status   | Description | Base URL |
+|---------|------|------------|-------------|----------|
+| [v1](#v1) | 14/1/2021 | Current  | Initial release | /api/v1 |
 
 
-## v1
+# v1
 ## Routes
 | Method | Path | Description | Authentication |
 |--------|-------|--------------|--------------|
+| GET    | [/api/v1](/api/v1)   | Get all routes | No |
 | GET    | [/api/v1/:guild_id/vote_count](#get-apiv1guild_idvote_count) | Get the current vote count | No |
 | GET    | [/api/v1/stats](#get-apiv1stats) | Get the bot's stats | No |
 | GET    | [/api/v1/:guild_id/config](#get-apiv1guild_idconfig) | Get the config | Yes |
@@ -19,9 +20,12 @@
 
 
 ## Authentication
-Authentication is required for many routes. You can find the authentication token in the [data](/DOCUMENTATION.md#data) command.
+Authentication is required for many routes. You can find the authentication token in the [data](/DOCUMENTATION.md#data) command. The token should be provided under the Authorization header.
 
 ## Route descriptions
+### GET /api/v1
+Get information about the API.
+
 ### GET /api/v1/:guild_id/vote_count
 This route returns the current vote count for the guild. You do not need to be authenticated to use this route.
 
@@ -29,6 +33,14 @@ Returns: 200 OK
 ```
 {
   "vote_count": 0
+}
+```
+
+Returns: 400 Bad Request
+```
+{
+  "error": "Missing <parameter name>",
+  "code": 400
 }
 ```
 
@@ -72,6 +84,14 @@ Returns: 200 OK
         "name": "Joe's hangout",
         "picture": "https://cdn.discord.com/.../.../...",
     }   
+}
+```
+
+Returns: 400 Bad Request
+```
+{
+  "error": "Missing <parameter name>",
+  "code": 400
 }
 ```
 
@@ -139,7 +159,7 @@ Returns: 204 No Content
 Returns: 400 Bad Request
 ```
 {
-  "error": "Missing required parameter",
+  "error": "Missing <parameter name>",
   "code": 400
 }
 ```
@@ -202,6 +222,14 @@ Returns: 200 OK
 ]
 ```
 
+Returns: 400 Bad Request
+```
+{
+  "error": "Missing <parameter name>",
+  "code": 400
+}
+```
+
 Returns: 401 Unauthorized
 ```
 {
@@ -234,7 +262,7 @@ Returns: 204 No Content
 Returns: 400 Bad Request
 ```
 {
-  "error": "Missing required parameter",
+  "error": "Missing <parameter name>",
   "code": "400-1"
 }
 ```
@@ -290,6 +318,38 @@ Returns: 200 OK
     "id": "1234567891011",
     "vote_count": 0,
     "last_vote": 1001010 // unix ms timestamp
+}
+```
+
+Returns: 400 Bad Request
+```
+{
+  "error": "Missing <parameter name>",
+  "code": 400
+}
+```
+
+Returns: 401 Unauthorized
+```
+{
+  "error": "Unauthorized",
+  "code": 401
+}
+```
+
+Returns: 403 Forbidden
+```
+{
+  "error": "Forbidden",
+  "code": 403
+}
+```
+
+Returns: 404 Not Found
+```
+{
+  "error": "Guild / user not found",
+  "code": 404
 }
 ```
 

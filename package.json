@@ -1,6 +1,7 @@
 {
     "name": "dslvotelistener",
     "version": "1.0.0-rewritten",
+    "api-version": "v1",
     "description": "DSL Vote Listener rewritten",
     "main": "index.js",
     "dependencies": {

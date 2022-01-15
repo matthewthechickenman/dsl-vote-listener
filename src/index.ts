@@ -1,4 +1,4 @@
-import {Db, MongoClient} from "mongodb";
+import {MongoClient, Db} from "mongodb";
 import {Express} from "express";
 import Config from './types/Config';
 import Client from './types/Client';
@@ -8,6 +8,7 @@ declare global {
         interface Global {
             config: Config;
             db: Db;
+            client: MongoClient;
             log: (type: string, message: string) => void;
             bot: Client;
             web: Express;
@@ -37,7 +38,8 @@ setInterval(() => {
 }, 1800000);
 
 global.conf = require("./config.json");
-global.db = await (new MongoClient(global.conf.db.url).connect().then(client => client.db(global.conf.db.name)));
+global.client = await (new MongoClient(global.conf.db.url).connect());
+global.db = global.client.db(global.conf.db.name);
 
 global.log = function log(type: string, message: string) {
     var date = new Date();
