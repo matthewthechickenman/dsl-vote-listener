@@ -1,7 +1,7 @@
 import Route from "../../../../types/Route";
 
 export default new Route({
-    name: "api/v1/:gid/:uid/vote_object",
+    name: "api.v1.user_vote_object",
     method: "GET",
     path: "/api/v1/:guildId/:userId/vote_object",
     handler: async (request, response) => {
@@ -25,7 +25,7 @@ export default new Route({
                 code: 400
             });
         }
-        const data = await global.client.collection("users").findOne({id: userId});
+        const data = await global.db.collection("Users").findOne({id: userId});
         if (data == null) {
             return response.status(404).send({
                 error: "User not found",

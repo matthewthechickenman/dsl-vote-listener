@@ -1,12 +1,12 @@
 import Route from "../../../../types/Route";
 
 export default new Route({
-    name: "/api/v1/base",
+    name: "api-v1.base",
     method: "GET",
     path: "/api/v1/",
     handler: async (req, res) => {
         res.status(200).send({
-            api_version: "v1/15-01-2022",
+            api_version: "v1/21-01-2022",
             guild_count: global.bot.guilds.cache.size,
             routes: [
                 {"path": "/", "method": "GET", "description": "Returns this message"},

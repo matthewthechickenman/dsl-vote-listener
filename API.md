@@ -15,9 +15,12 @@
 | GET    | [/api/v1/:guild_id/config](#get-apiv1guild_idconfig) | Get the config | Yes |
 | POST   | [/api/v1/:guild_id/config](#post-apiv1guild_idconfig) | Set the config | Yes |
 | GET    | [/api/v1/:guild_id/leaderboard](#get-apiv1guild_id-leaderboard) | Get the leaderboard for the guild | Yes |
-| POST   | [/api/v1/roles/:guild_id/:user_id/toggle_vote_role](#post-apiv1guild_iduser_idtoggle_vote_role) | Toggle the vote role | Yes |
 | GET    | [/api/v1/:guild_id/:user_id/vote_object](#get-apiv1guild_iduser_idvote_object) | Get the user's vote count | Yes |
-
+## Rate Limits
+| Method | Ratelimit | Description |
+|--------|-------|--------------|
+| /api | 120 per minute | Rate limit for all routes |
+| /api/:version/:guild_id/leaderboard | 1 every 5 minutes | Rate limit for the leaderboard route |
 
 ## Authentication
 Authentication is required for many routes. You can find the authentication token in the [data](/DOCUMENTATION.md#data) command. The token should be provided under the Authorization header.
@@ -33,14 +36,6 @@ Returns: 200 OK
 ```
 {
   "vote_count": 0
-}
-```
-
-Returns: 400 Bad Request
-```
-{
-  "error": "Missing <parameter name>",
-  "code": 400
 }
 ```
 
@@ -87,14 +82,6 @@ Returns: 200 OK
 }
 ```
 
-Returns: 400 Bad Request
-```
-{
-  "error": "Missing <parameter name>",
-  "code": 400
-}
-```
-
 Returns: 401 Unauthorized
 ```
 {
@@ -133,7 +120,10 @@ Allows you to modify the config and returns the new config for the guild. You ne
 Request:
 ```
 {
+    // Any of the following must be provided
     "lb_consent": false,
+    "vote_channel": "09310920934589",
+    "reward_role": "22159062166129"
 }
 ```
 
@@ -159,7 +149,7 @@ Returns: 204 No Content
 Returns: 400 Bad Request
 ```
 {
-  "error": "Missing <parameter name>",
+  "error": "Missing parameters",
   "code": 400
 }
 ```
@@ -190,7 +180,7 @@ Returns: 404 Not Found
 
 
 ### GET /api/v1/:guild_id/leaderboard
-Returns a leaderboard of all users in the server. You need to be authenticated to use this route.
+Returns a leaderboard of up to 10 users in the server. You need to be authenticated to use this route.
 
 Returns: 200 OK
 ```
@@ -222,14 +212,6 @@ Returns: 200 OK
 ]
 ```
 
-Returns: 400 Bad Request
-```
-{
-  "error": "Missing <parameter name>",
-  "code": 400
-}
-```
-
 Returns: 401 Unauthorized
 ```
 {
@@ -253,62 +235,6 @@ Returns 404 Not Found
   "code": 404
 }
 ```
-
-### POST /api/v1/roles/:guild_id/:user_id/toggle_vote_role
-Changes the vote role status for the user. You need to be authenticated to use this route.
-
-Returns: 204 No Content
-
-Returns: 400 Bad Request
-```
-{
-  "error": "Missing <parameter name>",
-  "code": "400-1"
-}
-```
-
-Returns: 400 Bad Request
-```
-{
-  "error": "Error adding/removing role",
-  "discord_error": "Permission error, etc.",
-  "code": "400-2"
-}
-```
-
-Returns: 401 Unauthorized
-```
-{
-  "error": "Unauthorized",
-  "code": 401
-}
-```
-
-Returns: 403 Forbidden
-```
-{
-  "error": "Forbidden",
-  "code": 403
-}
-```
-
-Returns: 404 Not Found
-```
-{
-  "error": "Guild not found",
-  "code": "404-1"
-}
-```
-
-Returns: 404 Not Found
-```
-{
-  "error": "User not found",
-  "code": "404-2"
-}
-```
-
-
 ### GET /api/v1/:guild_id/:user_id/vote_object
 Returns the user's vote object. You need to be authenticated to use this route.
 

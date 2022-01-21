@@ -39,7 +39,7 @@ setInterval(() => {
 
 global.conf = require("./config.json");
 global.client = await (new MongoClient(global.conf.db.url).connect());
-global.db = global.client.db(global.conf.db.name);
+global.db = global.client.db("DSLVoteListener");
 
 global.log = function log(type: string, message: string) {
     var date = new Date();

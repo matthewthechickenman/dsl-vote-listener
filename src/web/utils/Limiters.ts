@@ -24,15 +24,6 @@ const ApiOverall = rateLimit({
     standardHeaders
 });
 
-
-const ApiRoutesModifyRoles = rateLimit({
-    windowMs,
-    onLimitReached,
-    max: 10,
-    standardHeaders,
-    legacyHeaders
-});
-
 const ApiReadGuildLeaderboard = rateLimit({
     windowMs: windowMs * 5,
     onLimitReached,
@@ -41,5 +32,5 @@ const ApiReadGuildLeaderboard = rateLimit({
     legacyHeaders
 });
 
-export default [ {path: '/api', middleware: ApiOverall}, {path: '/api/v1/roles', middleware: ApiRoutesModifyRoles}, {path: '/api/v1/:gid/leaderboard', middleware: ApiReadGuildLeaderboard} ];
+export default [ {path: '/api', middleware: ApiOverall}, {path: '/api/:vid/:gid/leaderboard', middleware: ApiReadGuildLeaderboard} ];
 export { onLimitReached, windowMs, legacyHeaders, standardHeaders };
