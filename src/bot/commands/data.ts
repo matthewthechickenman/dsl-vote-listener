@@ -1,14 +1,17 @@
-import { CommandInteraction, Client } from "discord.js-light";
-
-const meta = {
+import Client from "../../types/Client";
+import { CommandInteraction } from "discord.js-light";
+import Command from "../../types/Command";
+const command = new Command();
+command.name = "data"
+command.meta = {
     name: 'data',
     description: 'Get your data from the bot (raw JSON, private data)',
     type: 2
 }
-
-const run = async (client: Client, interaction: CommandInteraction) => {
+command.run = async (client: Client, interaction: CommandInteraction) => {
     await interaction.deferReply({ephemeral: true});
     let serverData = await global.db.collection("data").findOne({id: interaction.guild.id, type: "server"});
+    // @ts-ignore
     if (!interaction.member.permissions.has("MANAGE_GUILD")) { serverData = {} }
     let userData = await global.db.collection("data").findOne({id: interaction.member.user.id, type: "user"});
 
@@ -25,4 +28,4 @@ ${JSON.stringify(userData, null, 4)}
     interaction.editReply({embeds: [embed]});
 }
 
-module.exports = {meta, run}
+export default command;
