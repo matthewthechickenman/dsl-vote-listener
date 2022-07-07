@@ -47,18 +47,20 @@ If you're going to be hosting a public instance of this bot, it is highly recomm
 
 You can see what data the bot stores, and why it stores it [here](#data-storage). You can use this to help write a privacy policy.
 
-Place your privacy policy in the web/public/privacy.txt folder. (You can also modify the existing route in the web server to serve this file, example code below)
+Place your privacy policy in the web/public/privacy.md file. (You can also modify the existing route in the web server to serve this file, example code below)
 
 ```js
-// File: web/routes/privacy.js
+// File: web/routes/privacy.ts
 // Change to:
-module.exports = {
+import Route from "../../types/Route"
+
+export default new Route({
     route: "/privacy",
     method: "GET",
     run: (req, res) => {
         res.render("privacy"); // This will render privacy.ejs.
     }
-}
+})
 ```
 
 ## Data storage

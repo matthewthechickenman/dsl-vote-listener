@@ -1,4 +1,10 @@
-const meta = {   
+import { CommandInteraction } from "discord.js-light";
+import Client from "../../types/Client";
+import Command from "../../types/Command";
+
+const command = new Command();
+
+command.meta = {   
     name: 'config',
     description: 'Change the bot\'s configuration',
     type: 2,
@@ -30,4 +36,4 @@ const meta = {
     ]
 }
 
-module.exports = {meta}
+export default command
