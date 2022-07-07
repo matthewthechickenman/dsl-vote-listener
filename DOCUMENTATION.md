@@ -83,7 +83,7 @@ This can be regenerated with the /change command.
 ### Leaderboard consent
 This is whether or not the bot will put your server on the public leaderboard.
 
-This can be changed with the /leaderboard command.
+This can be changed with the /change command.
 
 
 ## Reward roles
