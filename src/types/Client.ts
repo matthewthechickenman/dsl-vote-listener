@@ -7,8 +7,4 @@ export default class Client extends Discord.Client {
         super(options);
         this.commands = new Discord.Collection();
     }
-
-    loadCommands(commands: any[]) {
-
-    }
 }

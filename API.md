@@ -19,7 +19,7 @@
 ## Rate Limits
 | Method | Ratelimit | Description |
 |--------|-------|--------------|
-| /api | 120 per minute | Rate limit for all routes |
+| /api | 30 per minute | Rate limit for all routes |
 | /api/:version/:guild_id/leaderboard | 1 every 5 minutes | Rate limit for the leaderboard route |
 
 ## Authentication

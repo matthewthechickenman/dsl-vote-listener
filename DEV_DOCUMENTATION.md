@@ -96,7 +96,7 @@ This is the user schema which is stored in the database. There are comments in t
             "guild2": {...},
             "guild3": {...}
           }
-          VoteStats are removed when the user leaves the server OR doesn't vote for 6 months.
+          VoteStats are removed when the user leaves the server.
     */
 }
 ```

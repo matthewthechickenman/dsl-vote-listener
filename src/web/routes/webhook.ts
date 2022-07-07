@@ -12,8 +12,9 @@ export default new Route({
         if (req.body.isWeekend !== null) {
             return res.status(400).send('Bot votes are not supported');
         }
-        const guild = await global.db.collection("Guilds").findOne({
-            id: req.body.guild
+        const guild = await global.db.collection("data").findOne({
+            id: req.body.guild,
+            type: "guild"
         });
         if (!guild) {
             return res.status(404).send('Unregistered Guild')
@@ -24,11 +25,11 @@ export default new Route({
         if (Authorization !== guild.auth) {
             return res.status(401).send('Unauthorized');
         }
-        await global.db.collection("Guilds").updateOne({id: req.body.guild},{$incr: {vote_count: 1}});
+        await global.db.collection("data").updateOne({id: req.body.guild, type: "guild"},{$incr: {vote_count: 1}});
         // add vote to user
         const $incr = {};
         $incr[`${req.body.user}.votes`] = 1;
-        await global.db.collection("Users").updateOne({id: req.body.user},{$incr}, {upsert: true});
+        await global.db.collection("data").updateOne({id: req.body.user, type: "user"},{$incr}, {upsert: true});
         // send to vote channel
         const voteChannel = global.bot.channels.forge(guild.vote_channel);
         voteChannel.send({embeds: [

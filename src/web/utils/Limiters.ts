@@ -19,7 +19,7 @@ const standardHeaders = true;
 const ApiOverall = rateLimit({
     windowMs,
     onLimitReached,
-    max: 120,
+    max: 60,
     legacyHeaders,
     standardHeaders
 });
