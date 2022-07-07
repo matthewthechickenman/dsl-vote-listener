@@ -32,7 +32,7 @@ We keep all info until you request deletion of the data, or the server is delete
     For integrity purposes, we cannot allow you to control or correct your vote history. Deleting your vote history is allowed.
 :::
 
-If you require a query that cannot be handled by the slash commands, please contact us at [data@animalbot.xyz](mailto:data@animalbot.xyz?subject=DSL Privacy:) with a subject beginning with "DSL Privacy:" and we will try to resolve your query.
+If you require a query that cannot be handled by the slash commands, please contact us at [data@animalbot.xyz](mailto:data@animalbot.xyz?subject=DSL%20Privacy:) with a subject beginning with "DSL Privacy:" and we will try to resolve your query.
 
 ## 5. How can users access their data?
 :::warning

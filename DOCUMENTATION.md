@@ -117,8 +117,7 @@ Pretty straight forward, right?
 The last step is to set the webhook url to dsl.animalbot.xyz/webhook
 
 You are also welcome to send a test vote using the "Test Webhook" command to ensure everything is set up correctly.
-
-
+> :warning: Please note that this does not add a vote to your server's vote count.
 
 ## Notes
 Thanks for using DSL Vote Listener ❤️

@@ -66,11 +66,3 @@ global.getWebCtx = () => {
         servers: global.bot.guilds.cache.size,
     }}
 }
-
-setInterval(() => {
-    // Tasks that run every hour
-}, 3600000);
-
-setInterval(() => {
-    // Tasks that run every 30 minutes
-}, 1800000);
